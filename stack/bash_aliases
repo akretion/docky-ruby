@@ -10,7 +10,7 @@ function run_bundler_cmd () {
     fi
 }
  
-for cmd in $bundle_commands
+for cmd in "${bundle_commands[@]}"
 do
     alias $cmd="run_bundler_cmd $cmd"
 done
