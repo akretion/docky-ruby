@@ -1,6 +1,6 @@
 FROM ruby:latest
 RUN mkdir -p /workspace &&\
-    adduser developer
+    adduser ubuntu
 WORKDIR /workspace
 COPY stack/entrypoint /usr/local/bin/entrypoint
 COPY stack/bash_aliases /home/developer/.bash_aliases
@@ -14,4 +14,4 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     ln -sf /usr/bin/nodejs /usr/bin/node
 
 ENTRYPOINT ["/usr/local/bin/entrypoint"]
-USER developer
+USER ubuntu
