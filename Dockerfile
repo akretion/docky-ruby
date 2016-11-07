@@ -4,7 +4,6 @@ RUN mkdir -p /workspace &&\
 WORKDIR /workspace
 COPY stack/entrypoint /usr/local/bin/entrypoint
 COPY stack/bash_aliases /home/ubuntu/.bash_aliases
-RUN rm -rf /usr/local/bundle && ln -s /workspace/bundle /usr/local/bundle
 
 # Install node required by locomotive and many project
 RUN DEBIAN_FRONTEND=noninteractive && \
