@@ -8,7 +8,7 @@ COPY stack/bash_aliases /home/ubuntu/.bash_aliases
 # Install node required by locomotive and many project
 RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
-    apt-get install -y nodejs && \
+    apt-get install -y nodejs vim && \
     apt-get clean && \
     ln -sf /usr/bin/nodejs /usr/bin/node
 
