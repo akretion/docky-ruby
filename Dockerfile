@@ -11,6 +11,6 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y nodejs vim && \
     apt-get clean && \
     ln -sf /usr/bin/nodejs /usr/bin/node
-ENV LANG en_US.UTF-8
+ENV LANG C.UTF-8
 ENTRYPOINT ["/usr/local/bin/entrypoint"]
 USER ubuntu
