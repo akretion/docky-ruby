@@ -14,3 +14,5 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 ENV LANG C.UTF-8
 ENTRYPOINT ["/usr/local/bin/entrypoint"]
 USER ubuntu
+EXPOSE 3000
+EXPOSE 3333
