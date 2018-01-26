@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+cp /etc/hosts /etc/hosts.new
+sed -i 's/::1\tlocalhost ip6-localhost ip6-loopback/::1 ip6-localhost ip6-loopback/' /etc/hosts.new
+cp -f /etc/hosts.new /etc/hosts
+
+
 force_color_prompt=true
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -68,4 +73,4 @@ printf "$COL_23 MMMMMMMMMMM7IIIIIIIIIIMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM powe
 printf "$RESET" # Reset colors to "normal"
 echo ""
 
-exec "$@"
+exec gosu ubuntu "$@"
