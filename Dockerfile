@@ -1,4 +1,4 @@
-FROM ruby:2.4
+FROM ruby:2.5.1-stretch
 RUN mkdir -p /workspace &&\
     adduser ubuntu
 WORKDIR /workspace
