@@ -1,7 +1,7 @@
 bundle_commands=( wagon rails rake )
- 
+
 function run_bundler_cmd () {
-    if [ -e ./Gemfile ]; then
+    if [ -e ./Gemfile ] || [ "$BUNDLE_GEMFILE" ]; then
         echo "bundle exec $@"
         bundle exec $@
     else
@@ -9,7 +9,7 @@ function run_bundler_cmd () {
         $@
     fi
 }
- 
+
 for cmd in "${bundle_commands[@]}"
 do
     alias $cmd="run_bundler_cmd $cmd"
