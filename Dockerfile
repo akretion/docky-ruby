@@ -1,4 +1,4 @@
-FROM ruby:2.5.1-stretch
+FROM ruby:2.6.2-stretch
 RUN mkdir -p /workspace
 
 WORKDIR /workspace
@@ -8,7 +8,7 @@ COPY install /install
 # Install node required by locomotive and many project
 RUN DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
-    && apt-get install -y nodejs vim \
+    && apt-get install -y nodejs vim mongodb-clients\
     && /install/gosu.sh \
     && apt-get clean \
     && ln -sf /usr/bin/nodejs /usr/bin/node
